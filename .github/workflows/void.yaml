@@ -9,6 +9,9 @@ jobs:
     steps:
         # Use this GitHub Actions at least once in this workflow as soon as possible.
       - uses: benwart/auto-cancel-redundant-workflow@master
+        with:
+          WORKFLOW_RUN_STATUS_FILTER: waiting
+
 
   deploy:
     environment: void
