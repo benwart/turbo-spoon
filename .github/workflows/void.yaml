@@ -1,0 +1,19 @@
+on: push
+
+name: Void Deploy
+
+jobs:
+  purge:
+    name: Purge Old Jobs
+    runs-on: ubuntu-latest
+    steps:
+        # Use this GitHub Actions at least once in this workflow as soon as possible.
+      - uses: benwart/auto-cancel-redundant-workflow@master
+
+  deploy:
+    environment: void
+    name: Deploy to Void
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo "Hello World"
+        run: echo "Hello World"
